@@ -27,7 +27,8 @@ class SpaceController extends Controller
 
     public function wordCount(Request $request){
     	$str = $request->input('count_word');
-       	$count_spec_word = substr_count($str,'Pakistan');
+    	$str = strtolower($str);
+       	$count_spec_word = substr_count($str,'pakistan');
        	echo "<h3>Count(Pakistan) in string</h3><br>". $count_spec_word;
        	dd();
     }
