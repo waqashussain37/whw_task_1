@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+//use Illuminate\Support\Facades\View;
+//use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
+*/
+
+Route::get('/space-form','App\Http\Controllers\SpaceController@create_remove_spc_form');
+Route::get('/count-word-form','App\Http\Controllers\SpaceController@creat_count_form');
+Route::post('remove/space','App\Http\Controllers\SpaceController@removeSpace');
+Route::post('words/counts','App\Http\Controllers\SpaceController@wordCount');
